@@ -9,9 +9,9 @@
 
         $scope.setServo = function(analogID, value) {
                 var url = "http://192.168.1.200/arduino/servo/" + analogID + "/" + value;
-                puts.log(url);
+                puts(url);
                 //$http.get(url);
-                puts.log(url);
+                puts(url);
         }
 
     }
