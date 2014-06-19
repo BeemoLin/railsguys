@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class ArduinoController < ApplicationController
   def index
   end
 end
