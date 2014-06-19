@@ -1,13 +1,5 @@
 <h2>Hello Arduino<h2>
 
-    <div ng-controller="ArduinoCtrl" class="container">
-        <button ng-click="setServo(5, 0)" class="btn">MoveServo(0)</button>
-        <button ng-click="setServo(5, 180)" class="btn">MoveServo(180)</button>
-    </div>
-	
-<p>Find me in app/views/home/index.html.erb</p>
-<h1>Arduino#index</h1>
-
 <script src="http://code.angularjs.org/1.2.6/angular.min.js"></script>
 <script>
 
@@ -23,3 +15,9 @@
     }
 
 </script>
+
+<div ng-controller="ArduinoCtrl" class="container">
+    <button ng-click="setServo(5, 0)" class="btn">MoveServo(0)</button>
+    <button ng-click="setServo(5, 180)" class="btn">MoveServo(180)</button>
+</div>
+
