@@ -5,8 +5,3 @@
 @IndexCtrl = ($scope) ->
   $scope.title = "My blog"
 
-@ArduinoCtrl($scope, $http) ->
-	$scope.setServo = @(analogID, value) ->
-		var url = "http://192.168.1.165/arduino/servo/" + analogID + "/" + value;
-		console.log(url);
-		$http.get(url);
