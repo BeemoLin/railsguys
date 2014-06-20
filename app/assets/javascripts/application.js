@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
+//= require underscore-min
 //= require twitter/bootstrap
 //= require angular
