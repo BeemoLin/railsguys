@@ -1,5 +1,9 @@
 <h2>Hello Arduino<h2>
 
+<div ng-controller="IndexCtrl">
+  <h1>{{ title }}</h1>
+</div>
+
 <div ng-controller="ArduinoCtrl" class="container">
     <button ng-click="setServo(5, 0)" class="btn">MoveServo(0)</button>
     <button ng-click="setServo(5, 180)" class="btn">MoveServo(180)</button>
