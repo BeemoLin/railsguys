@@ -1,34 +1,4 @@
 <h2>Hello Arduino<h2>
-<%= javascript_include_tag "http://code.angularjs.org/1.2.6/angular.min.js" %>
-<!--script src="http://code.angularjs.org/1.2.6/angular.min.js"></script-->
-<%= javascript_tag do -%>
-    function ArduinoCtrl($scope,$http)
-    {
-        $scope.setServo = function(analogID, value) {
-                var url = "http://192.168.1.200/arduino/servo/" + analogID + "/" + value;
-                console.log(url);
-                //$http.get(url);
-                puts(url);
-        }
-    }
-<% end -%>
-<script>
-
-
-    function ArduinoCtrl($scope,
-                         $http)
-    {
-
-        $scope.setServo = function(analogID, value) {
-                var url = "http://192.168.1.200/arduino/servo/" + analogID + "/" + value;
-                console.log(url);
-                //$http.get(url);
-                puts(url);
-        }
-
-    }
-
-</script>
 
 <div ng-controller="ArduinoCtrl" class="container">
     <button ng-click="setServo(5, 0)" class="btn">MoveServo(0)</button>
