@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore-min
 //= require twitter/bootstrap
+//= require turbolinks
 //= require angular.min
+//= require_tree .

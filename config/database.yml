@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: railsguys_production
-  username: railsguys
+  username: beemo
   password: <%= ENV['RAILSGUYS_DATABASE_PASSWORD'] %>
