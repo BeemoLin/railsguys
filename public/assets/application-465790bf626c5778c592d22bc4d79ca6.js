@@ -13845,9 +13845,7 @@ dc)}))})(window,document);!window.angular.$$csp()&&window.angular.element(docume
 //# sourceMappingURL=angular.min.js.map
 ;
 (function() {
-  this.IndexCtrl = function($scope) {
-    return $scope.title = "My blog";
-  };
+
 
 }).call(this);
 (function() {

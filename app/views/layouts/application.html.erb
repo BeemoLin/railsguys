@@ -3,34 +3,46 @@
 <head>
   <title>Railsguys</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', controller_name %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
       <div class="navbar-header">
-        <a class="brand" href="#">Message Board</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">Rails Guys</a>
       </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home </a></li>
-		  <li class="active"><a href="/arduino"><i class="icon-tasks icon-white"></i> Arduino </a></li>
+          <li>
+            <a href="/">Getting started</a>
+          </li>
+          <li>
+          <a href="/"><span class="icon-home"></span>Home</a>
+          </li>
+          <li>
+            <a href="/arduino"><span class="icon-tasks icon-white"></span>Arduino</a>
+          </li>
         </ul>
-        <p class="navbar-text pull-right">
+        <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <%= link_to current_user.username, edit_user_registration_path, :class => "btn btn-default navbar-btn" %>
-             | 
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-default navbar-btn" %>
+            <li><%= link_to current_user.username, edit_user_registration_path %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-default navbar-btn" %>
-
-             | 
-            <%= link_to "Sign In", new_user_session_path, :class => "btn btn-default navbar-btn" %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
-      </p>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
+
   <div>
     <%= yield %>
   </div>
