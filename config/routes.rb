@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'static/index'
-
   devise_for :user
   get 'home/index'
 
@@ -20,7 +18,6 @@ Rails.application.routes.draw do
   #   resources :products
   resources :posts
   resources :arduino
-  resources :static
 
   # Example resource route with options:
   #   resources :products do
