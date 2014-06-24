@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require ember
+//= require ember-data
+
+Railsguys = Ember.Application.create();
