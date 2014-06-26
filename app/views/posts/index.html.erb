@@ -1,6 +1,8 @@
+<% if user_signed_in? %>
 <p>hello <%= current_user.username %></p>
 
 <div><%= link_to "New Post", new_post_path%></div>
+<% end %>
 <table>
   <thead>
     <tr>
