@@ -15,7 +15,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= @owner %></td>
+        <td><%= post.owner.username %></td>
         <td><%= post.updated_at %></td>
       </tr>
     <% end %>

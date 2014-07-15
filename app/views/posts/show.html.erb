@@ -15,10 +15,12 @@
       <tr>
         <td><%= @post.title %></td>
         <td><%= @post.content %></td>
-        <td><%= @owner %></td>
+        <td><%= @post.owner.username %></td>
         <td><%= @post.updated_at %></td>
       </tr>
   </tbody>
 </table>
-
+<%= image_tag @post.photo.url %>
+<%= image_tag @post.photo.url(:medium) %>
+<%= image_tag @post.photo.url(:thumb) %>
 <%= link_to "Back", :back, :class => "btn btn-default" %>
