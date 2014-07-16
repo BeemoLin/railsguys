@@ -2,25 +2,62 @@
 <p>hello <%= current_user.username %></p>
 
 <% end %>
-<table class="table">
-  <thead>
-    <tr>
-      <td>Title</td>
-      <td>Content</td>
-      <td>Author</td>
-      <td>Update Time</td>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><%= @post.title %></td>
-        <td><%= @post.content %></td>
-        <td><%= @post.owner.username %></td>
-        <td><%= @post.updated_at %></td>
-      </tr>
-  </tbody>
-</table>
-<%= image_tag @post.photo.url %>
-<%= image_tag @post.photo.url(:medium) %>
-<%= image_tag @post.photo.url(:thumb) %>
+<td></td>
+
+<td></td>
+<td></td>
+<td></td>
+        
+<div class="panel panel-default" style="width:90%;">
+  <div class="panel-heading">
+    <h3>
+      <%= @post.title %>
+      <small><span class="glyphicon glyphicon-pencil"></span>Author:<%= @post.owner.username %></small>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <%= @post.content %>
+    <% #image_tag @post.photo.url %>
+    <% #image_tag @post.photo.url(:medium) %>
+    <%= image_tag @post.photo.url(:thumb) %>
+  </div>
+  <div class="panel-footer">
+    <small>Last Update:<%= @post.updated_at %></small>
+  </div>
+</div>
+        
+
+<h4>Comments</h4>
+
+<% @post.comments.each do |comment| %>
+  <div class="panel panel-default" style="width:40%;">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= comment.commenter %></h3>
+    </div>
+    <div class="panel-body">
+      <%= comment.content %>
+    </div>
+  </div>
+<% end %>
+
+<div class="panel panel-info" style="width:40%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add a comment:</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+    <p>
+      <%= f.label :commenter %>
+      <%= f.text_field :commenter, :class => 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content, :class => 'form-control', :rows => '3' %>
+    </p>
+    <p>
+      <%= f.submit :class => "btn btn-default" %>
+    </p>
+    <% end %>
+  </div>
+</div>
 <%= link_to "Back", :back, :class => "btn btn-default" %>
