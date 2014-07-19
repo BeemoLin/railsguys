@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<p>hello <%= current_user.username %></p>
+<p>hello <%= current_user.email %></p>
 
 <div><%= link_to "New Post", new_post_path, class:'btn btn-primary' %></div>
 <% end %>
@@ -18,7 +18,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= post.owner.username %></td>
+        <td><%= post.owner.email %></td>
         <td><%= post.updated_at %></td>
         <% if post.owner == current_user %>
           <td>
