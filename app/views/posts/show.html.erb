@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<p>hello <%= current_user.username %></p>
+<p>hello <%= current_user.email %></p>
 
 <% end %>
 <td></td>
@@ -12,7 +12,7 @@
   <div class="panel-heading">
     <h3>
       <%= @post.title %>
-      <small><span class="glyphicon glyphicon-pencil"></span>Author:<%= @post.owner.username %></small>
+      <small><span class="glyphicon glyphicon-pencil"></span>Author:<%= @post.owner.email %></small>
     </h3>
   </div>
   <div class="panel-body">
