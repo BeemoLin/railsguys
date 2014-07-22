@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'ember-rails', github: 'emberjs/ember-rails'
+gem 'ember-source', '~> 1.5.1.1'
+gem 'emblem-rails'
+
 gem 'paperclip'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
@@ -42,8 +48,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'devise'
-gem 'bootstrap-sass', '~> 3.1.1'
-gem 'ember-rails', github: 'emberjs/ember-rails'
-gem 'ember-source', '~> 1.5.1.1'
-gem 'emblem-rails'
