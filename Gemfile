@@ -12,6 +12,8 @@ gem 'will_paginate-bootstrap'
 gem 'rolify'
 gem 'cancancan'
 
+gem 'omniauth-facebook'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
