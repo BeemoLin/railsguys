@@ -12,7 +12,9 @@ gem 'will_paginate-bootstrap'
 gem 'rolify'
 gem 'cancancan'
 
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
