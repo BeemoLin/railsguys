@@ -15,5 +15,3 @@
 /log/*.log
 /tmp
 
-/config/initializers/devise.rb
-/config/secrets.yml
