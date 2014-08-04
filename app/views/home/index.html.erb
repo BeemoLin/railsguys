@@ -1,4 +1,93 @@
-<div class="jumbotron">
-  <h1 class="text-center">你好，歡迎來到這裡！</h1>
-  <p class="text-center"><a href="#" class="btn btn-success btn-lg" role="button">更多訊息 &raquo;</a></p>
+<div class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-message">
+          <h1>Ruby 台中</h1>
+          <h3>Ruby in Taichung</h3>
+          <hr class="intro-divider">
+          <ul class="list-inline intro-social-buttons">
+            <li>
+              <a target="_blank" href="https://www.facebook.com/cameogen" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">FaceBook</span></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://twitter.com/dteout" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/BeemoLin" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<!-- Page Content -->
+
+<div class="content-section-a">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">主旨:</h2>
+                <p class="lead">主要是透過固定的一個聚會讓台中人有個可以討論有關ruby的社群，初期可能會以workshop方式作為活動的主題</p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+              <img class="img-responsive" src="<%= asset_path('ipad.png') %>" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-a -->
+
+<div class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">地點及時間:</h2>
+                <p class="lead">在每週二晚上六點半開始到九點會在台中西區的<a target="_blank" href="http://www.mrbrown.com.tw/b2.aspx?City=%u53f0%u4e2d%u5e02&Area=">伯朗咖啡館</a>二樓</br>(*場地有低消，大約一百元左右)</p>
+            </div>
+            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+            <img class="img-responsive" src="<%= asset_path('dog.png') %>" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-b -->
+
+<div class="content-section-a">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">問題與建議:<br></h2>
+                <p class="lead">如有任何問題與建議請到<%= link_to "留言板", posts_path, :class => "btn btn-success" %>留言給我們</p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+              <img class="img-responsive" src="<% asset_path('phones.png') %>" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-a -->

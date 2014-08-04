@@ -51,11 +51,15 @@
       </div>
     </div>
 
-    <div class="container theme-showcase">
+    <% unless(controller_name=="home") %>
+      <div class="container theme-showcase">
+    <% else %>
+      <div>
+    <% end %>
+    
+    <%= flash[:alert] %>
 
-      <p><%= flash[:alert] %></p> 
       <%= yield %>
-
 
     </div> <!-- /container -->
 
