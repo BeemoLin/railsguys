@@ -6,3 +6,20 @@ body
   padding-top: 50px;
   padding-bottom: 30px;
 }
+
+.user-gravatar
+{
+  display: inline-block;
+  width: 32px;
+  position: relative;
+  margin: 0;
+}
+
+.user-gravatar img
+{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  top: -22px;
+}

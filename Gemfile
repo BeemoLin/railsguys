@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'gravtastic'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'ember-source', '~> 1.5.1.1'
