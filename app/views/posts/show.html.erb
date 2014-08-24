@@ -17,9 +17,13 @@
   </div>
   <div class="panel-body">
     <%= @post.content %>
-    <% #image_tag @post.photo.url %>
-    <% #image_tag @post.photo.url(:medium) %>
-    <%= image_tag @post.photo.url(:thumb) %>
+    <% unless @pictures.empty? %>
+      <% @pictures.each do |pic| %>
+      <% image_tag pic.photo.url %>
+      <%= image_tag pic.photo.url(:medium) %>
+      <% image_tag pic.photo.url(:thumb) %>
+      <% end %>
+    <% end %>
   </div>
   <div class="panel-footer">
     <small>Last Update:<%= @post.updated_at %></small>

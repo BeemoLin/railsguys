@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy  
   validates :title, :owner, :presence => true
   
-  attr_accessible :description, :name, :pictures 
+  #attr_accessible :description, :name, :pictures 
   has_many :pictures, :dependent => :destroy  
   
   def editable_by?(user)
