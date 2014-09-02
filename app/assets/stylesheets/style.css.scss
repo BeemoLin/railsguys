@@ -7,6 +7,12 @@ body
   padding-bottom: 30px;
 }
 
+div
+{ 
+  word-wrap: break-word; 
+  word-break: normal; 
+}
+
 .user-gravatar
 {
   display: inline-block;

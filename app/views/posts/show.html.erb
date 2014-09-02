@@ -8,9 +8,9 @@
 <td></td>
 <td></td>
         
-<div class="panel panel-default" style="width:90%;">
+<div class="panel panel-primary" style="width:90%;">
   <div class="panel-heading">
-    <h3><%= @post.title %></h3>
+    <h2><%= @post.title %></h2>
     <small><span class="glyphicon glyphicon-pencil"></span> 作者:<%= @post.owner.email %></small>
   </div>
   <div class="panel-body">
@@ -34,10 +34,16 @@
 <% @post.comments.each do |comment| %>
   <div class="panel panel-default" style="width:40%;">
     <div class="panel-heading">
-      <h3 class="panel-title"><%= comment.commenter %></h3>
+      <h3 class="panel-title">姓名：<%= comment.commenter %></h3>
+      <% if can? :manage, @post %>
+        <small><span class="glyphicon glyphicon-pencil"></span> 作者:<%= comment_user(comment.user_id) %></small>
+      <% end %>
     </div>
     <div class="panel-body">
       <%= comment.content %>
+    </div>
+    <div class="panel-footer">
+      <small style="color:#555;font-size:x-small;">時間:<%= comment.updated_at.localtime %></small>
     </div>
   </div>
 <% end %>
@@ -50,13 +56,14 @@
     <div class="panel-body" id="new_comment" style="display:none;">
       <%= form_for([@post, @post.comments.build]) do |f| %>
       <p>
-        <%= f.label :commenter, "標題" %>
+        <%= f.label :commenter, "姓名" %>
         <%= f.text_field :commenter, :class => 'form-control' %>
       </p>
       <p>
         <%= f.label :content, "內容" %>
         <%= f.text_area :content, :class => 'form-control', :rows => '3' %>
       </p>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
       <p>
         <%= f.submit :class => "btn btn-default", :value => "送出" %>
       </p>
