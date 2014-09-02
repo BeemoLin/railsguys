@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     #@posts = Post.all
-    @posts = @paginate = Post.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @posts = @paginate = Post.paginate(:page => params[:page], :per_page => 10).order('updated_at DESC')
 
     respond_to do |format|
       format.html
