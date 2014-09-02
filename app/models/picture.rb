@@ -3,12 +3,13 @@ class Picture < ActiveRecord::Base
   belongs_to :post
 
   has_attached_file :photo, 
-    :styles => { :medium => "300x300>", :thumb => "100x100>" },
-    :path => ":rails_root/public/images/:style/:id-:filename",
-    :url => "/images/:style/:id-:filename",
+    :styles => { :medium => "300x300>" },
+    :path => ":rails_root/public/system/:class/:attachment/:id/:basename/:style.:extension",
+    :url => "/system/:class/:attachment/:id/:basename/:style.:extension",
     :default_url => "/images/:style/missing.png"
   
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/  
+  validates_attachment_size :photo, :less_than => 5.megabytes  
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   
   def editable_by?(user)
     user && user == owner
