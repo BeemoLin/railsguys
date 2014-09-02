@@ -1,29 +1,29 @@
 <% if user_signed_in? %>
-<p>hello <%= current_user.email %></p>
+<p>您好 <%= current_user.email %></p>
 
-<div><%= link_to "New Post", new_post_path, class:'btn btn-primary' %></div>
+<div><%= link_to "新增留言", new_post_path, class:'btn btn-primary' %></div>
 <% end %>
 <table class="table">
   <thead>
     <tr>
-      <td>Title</td>
-      <td>Author</td>
-      <td>Update Time</td>
+      <td>主題</td>
+      <td>作者</td>
+      <td>更新時間</td>
       <td></td>
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= link_to truncate(post.title, :length => 12, :omission => "..."), post_path(post) %></td>
         <td><%= post.owner.email %></td>
-        <td><%= post.updated_at %></td>
+        <td><%= post.updated_at.localtime %></td>
         <td>
           <% if can? :update, post %>
-            <%= link_to "Edit", edit_post_path(post), :class => "btn btn-default" %>
+            <%= link_to "編輯", edit_post_path(post), :class => "btn btn-warning" %>
           <% end %>
           <% if can? :destroy, post %>
-            <%= link_to "Delete", post_path(post), :class => "btn btn-default", :method => :delete, :onclick => "return confirm('Are you sure?')" %>
+            <%= link_to "刪除", post_path(post), :class => "btn btn-danger", :method => :delete, :onclick => "return confirm('確認刪除嗎?')" %>
           <% end %>
         </td>
       </tr>

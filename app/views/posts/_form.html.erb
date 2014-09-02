@@ -1,15 +1,15 @@
 
     <div>
-      <%= f.label :title %>
+      <%= f.label :title, "標題" %>
       <%= f.text_field :title, :class => 'form-control' %>
     </div>
-  
+    <br/> 
     <div>
-      <%= f.label :content %>
+      <%= f.label :content, "內容" %>
       <%= f.text_area :content, :class => 'form-control', :rows => '3' %>
     </div>
-
+    <br/>
     <div>
-      <%= f.label :photos %>
+      <%= f.label :photos, "上傳圖片(可覆選多張)" %>
       <%= file_field_tag "photos[]", type: :file, multiple: true %>
     </div>

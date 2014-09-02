@@ -4,6 +4,7 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require lightbox.min
 #= require_self
 #= require railsguys
 

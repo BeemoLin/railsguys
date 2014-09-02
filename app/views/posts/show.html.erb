@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<p>hello <%= current_user.email %></p>
+<p>您好 <%= current_user.email %></p>
 
 <% end %>
 <td></td>
@@ -10,28 +10,26 @@
         
 <div class="panel panel-default" style="width:90%;">
   <div class="panel-heading">
-    <h3>
-      <%= @post.title %>
-      <small><span class="glyphicon glyphicon-pencil"></span>Author:<%= @post.owner.email %></small>
-    </h3>
+    <h3><%= @post.title %></h3>
+    <small><span class="glyphicon glyphicon-pencil"></span> 作者:<%= @post.owner.email %></small>
   </div>
   <div class="panel-body">
-    <%= @post.content %>
     <% unless @pictures.empty? %>
       <% @pictures.each do |pic| %>
       <% image_tag pic.photo.url %>
-      <%= image_tag pic.photo.url(:medium) %>
-      <% image_tag pic.photo.url(:thumb) %>
+      <%=link_to(image_tag(pic.photo.url(:medium)), pic.photo.url, :'data-lightbox' => pic.photo.url) %>
       <% end %>
     <% end %>
+    <hr/>
+    <%= @post.content %>
   </div>
   <div class="panel-footer">
-    <small>Last Update:<%= @post.updated_at %></small>
+    <small>最後更新時間:<%= @post.updated_at.localtime %></small>
   </div>
 </div>
         
 
-<h4>Comments</h4>
+<h4>留言回覆</h4>
 
 <% @post.comments.each do |comment| %>
   <div class="panel panel-default" style="width:40%;">
@@ -47,20 +45,20 @@
 <% if user_signed_in? %>
   <div class="panel panel-info" style="width:40%;">
     <div class="panel-heading">
-      <h3 class="panel-title">新增留言:</h3>
+      <h3 class="panel-title">新增留言回覆:</h3>
     </div>
     <div class="panel-body">
       <%= form_for([@post, @post.comments.build]) do |f| %>
       <p>
-        <%= f.label :commenter %>
+        <%= f.label :commenter, "標題" %>
         <%= f.text_field :commenter, :class => 'form-control' %>
       </p>
       <p>
-        <%= f.label :content %>
+        <%= f.label :content, "內容" %>
         <%= f.text_area :content, :class => 'form-control', :rows => '3' %>
       </p>
       <p>
-        <%= f.submit :class => "btn btn-default" %>
+        <%= f.submit :class => "btn btn-default", :value => "送出" %>
       </p>
       <% end %>
     </div>
@@ -69,4 +67,4 @@
   <%= link_to "登入新增留言", new_user_session_path, :class=> "btn btn-success" %>
 <% end %>
 <hr/>
-<%= link_to "Back", posts_path, :class => "btn btn-default" %>
+<%= link_to "上一頁", posts_path, :class => "btn btn-default" %>

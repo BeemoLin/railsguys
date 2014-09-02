@@ -4,7 +4,7 @@
     <%= render :partial => 'form', :locals => { :f => f } %>
     
     </br>
-    <%= f.submit :class => "btn btn-default" %>
-    <%= link_to "back", posts_path, :class => "btn btn-default" %>
+    <%= f.submit :class => "btn btn-success", :value => "送出" %>
+    <%= link_to "上一頁", posts_path, :class => "btn btn-default" %>
   <% end %>
 </div>
