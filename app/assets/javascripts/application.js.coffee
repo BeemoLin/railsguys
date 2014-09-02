@@ -7,6 +7,7 @@
 #= require lightbox.min
 #= require_self
 #= require railsguys
+#= require_tree .
 
 # for more details see: http://emberjs.com/guides/application/
 window.Railsguys = Ember.Application.create()

@@ -44,10 +44,10 @@
 
 <% if user_signed_in? %>
   <div class="panel panel-info" style="width:40%;">
-    <div class="panel-heading">
-      <h3 class="panel-title">新增留言回覆:</h3>
+    <div class="panel-heading" onclick="new_comment();">
+      <h3 class="panel-title">新增回覆</h3>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="new_comment" style="display:none;">
       <%= form_for([@post, @post.comments.build]) do |f| %>
       <p>
         <%= f.label :commenter, "標題" %>
