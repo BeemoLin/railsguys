@@ -20,7 +20,7 @@
       <% end %>
     <% end %>
     <hr/>
-    <%= @post.content %>
+    <%= simple_format(@post.content) %>
   </div>
   <div class="panel-footer">
     <small>最後更新時間:<%= @post.updated_at.localtime %></small>
@@ -39,7 +39,7 @@
       <% end %>
     </div>
     <div class="panel-body">
-      <%= comment.content %>
+      <%= simple_format(comment.content) %>
     </div>
     <div class="panel-footer">
       <small style="color:#555;font-size:x-small;">時間:<%= comment.updated_at.localtime %></small>
