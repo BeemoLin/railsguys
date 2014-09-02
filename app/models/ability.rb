@@ -10,15 +10,15 @@ class Ability
     can :manage, :all
   elsif user.has_role?(:manager)
     can :read, Post
-    can :create, Post
+    #can :create, Post
 
-    can :update, Post do |post|
-      (post.user_id == user.id)
-    end
+    #can :update, Post do |post|
+    #  (post.user_id == user.id)
+    #end
 
-    can :destroy, Post do |post|
-      (post.user_id == user.id)
-    end
+    #can :destroy, Post do |post|
+    #  (post.user_id == user.id)
+    #end
   end 
 
 

@@ -1,13 +1,17 @@
 <% if user_signed_in? %>
 <p>您好 <%= current_user.email %></p>
 
-<div><%= link_to "新增留言", new_post_path, class:'btn btn-primary' %></div>
+<div>
+  <% if can? :manage, @posts %>
+    <%= link_to "新增文章", new_post_path, class:'btn btn-primary' %>
+  <% end %>
+</div>
 <% end %>
 <table class="table">
   <thead>
     <tr>
       <td>主題</td>
-      <td>作者</td>
+      <td>簡介</td>
       <td>更新時間</td>
       <td></td>
     </tr>
@@ -15,13 +19,20 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to truncate(post.title, :length => 12, :omission => "..."), post_path(post) %></td>
-        <td><%= post.owner.email %></td>
+        <td>
+          <h3 style="margin:0;"><%= link_to truncate(post.title, :length => 12, :omission => "..."), post_path(post) %></h3><br/>
+          <% unless post.pictures.empty? %>
+            <% pic ||= post.pictures.first %>
+            <%=link_to(image_tag(pic.photo.url(:medium)), pic.photo.url, :'data-lightbox' => pic.photo.url) %><br/>
+          <% end %>
+        </td>
+        <td width="50%"><%= truncate(post.content, :length => 200, :omission => "...") %></td>
         <td><%= post.updated_at.localtime %></td>
         <td>
           <% if can? :update, post %>
             <%= link_to "編輯", edit_post_path(post), :class => "btn btn-warning" %>
           <% end %>
+          <br/><br/>
           <% if can? :destroy, post %>
             <%= link_to "刪除", post_path(post), :class => "btn btn-danger", :method => :delete, :onclick => "return confirm('確認刪除嗎?')" %>
           <% end %>
