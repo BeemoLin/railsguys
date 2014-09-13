@@ -89,13 +89,14 @@
                 <div class="clearfix"></div>
                 <h2 class="section-heading">聯絡方式:<br></h2>
                 <p class="lead">
-                  可愛之旅<br/>
+                  可愛之旅(勝峰)<br/>
                   手機：0923-509069<br/>
-                  LINE ID:0923509069<br/>
                   傳真：04-23265100<br/>
                   E-mail：twlife0923@yahoo.com.tw<br/>
                   地址：台中市西區台灣大道二段405號6樓之7<br/>
                   聯絡人：謝小姐<br/>
+                  <%=link_to(image_tag(asset_path('lineid.jpg'), :width => 100), asset_path('lineid.jpg'), :'data-lightbox' => asset_path('lineid.jpg')) %>
+                  LINE ID:0923509069<br/>
                   如有任何旅遊問題請到<%= link_to "留言板", posts_path, :class => "btn btn-success" %>留言給我們
                 </p>
             </div>
