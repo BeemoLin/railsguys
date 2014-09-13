@@ -16,7 +16,7 @@
   <div class="panel-body">
     <% unless @pictures.empty? %>
       <% @pictures.each do |pic| %>
-      <%=link_to(image_tag(pic.photo.url(:medium)), pic.photo.url, :'data-lightbox' => pic.photo.url) %><br/>
+      <%=link_to(image_tag(pic.photo.url(:medium)), pic.photo.url, :'data-lightbox' => pic.photo.url) %>
       <% end %>
     <% end %>
     <hr/>
