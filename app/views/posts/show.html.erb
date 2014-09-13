@@ -14,7 +14,7 @@
     <small><span class="glyphicon glyphicon-pencil"></span> 作者:<%= @post.owner.email %></small>
   </div>
   <div class="panel-body">
-    <div style="float:left;">
+    <div style="width:50%;float:left;">
       <% unless @pictures.empty? %>
         <% @pictures.each do |pic| %>
         <%=link_to(image_tag(pic.photo.url(:medium)), pic.photo.url, :'data-lightbox' => pic.photo.url) %>
