@@ -1,15 +1,21 @@
 
     <div>
       <%= f.label :title, "標題" %>
-      <%= f.text_field :title, :class => 'form-control' %>
+			<%= f.text_field :title, :class => 'form-control', :style => 'width: 50%' %>
     </div>
-    <br/> 
+		<br/>
+    <div>
+      <%= f.label :start_date, "出發日期(可留空白)" %>
+			<%= f.text_field :start_date, :class => 'form-control', :style => 'width: 10%' %>
+    </div>
+		<br/>
     <div>
       <%= f.label :content, "內容" %>
-      <%= f.text_area :content, :class => 'form-control', :rows => '3' %>
+      <%= f.text_area :content, :class => 'form-control', :style => 'width: 80%', :rows => '25' %>
     </div>
     <br/>
     <div>
       <%= f.label :photos, "上傳圖片(可覆選多張)" %>
       <%= file_field_tag "photos[]", type: :file, multiple: true %>
-    </div>
+		</div>
+

@@ -1,0 +1,17 @@
+<div id="calendar">
+	<h2 id="month">
+		<%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
+		<%=h @date.strftime("%Y 年 %m 月") %>
+		<%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
+	</h2>
+	<%= calendar_for(@posts, :year => @date.year, :month => @date.month) do |t| %>
+		<%= t.head('日', '一', '二', '三', '四', '五', '六') %>
+		<%= t.day(:day_method => :start_date) do |day, posts| %>
+			<%= day.day %>
+			<% posts.each do |post| %>
+				<%= link_to h(post.title), post %>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>
+

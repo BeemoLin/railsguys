@@ -10,8 +10,15 @@
         
 <div class="panel panel-primary" style="width:90%;">
   <div class="panel-heading">
-    <h2><%= @post.title %></h2>
-    <small><span class="glyphicon glyphicon-pencil"></span> 作者:<%= @post.owner.email %></small>
+		<h2><%= @post.title %></h2>
+		<h4>出發日期: 
+			<% if(@post.start_date.nil?) %>
+				<%= "可隨選時間" %>
+			<% else %>
+				<%= @post.start_date %>
+			<% end %>
+		</h4>
+    <small><span class="glyphicon glyphicon-pencil"></span> 作者: 站長<% @post.owner.email %></small>
   </div>
   <div class="panel-body">
     <div style="width:50%;float:left;">

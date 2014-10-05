@@ -12,7 +12,7 @@
     <tr>
       <td>主題</td>
       <td>簡介</td>
-      <td>更新時間</td>
+      <td>出發日期</td>
       <td></td>
     </tr>
   </thead>
@@ -27,7 +27,13 @@
           <% end %>
         </td>
         <td width="50%"><%= simple_format(truncate(post.content, :length => 200, :omission => "...")) %></td>
-        <td><%= post.updated_at.localtime.strftime('%F %H:%M:%S') %></td>
+				<td>
+					<% if(post.start_date.nil?) %>
+						<%= "可隨選時間" %>
+					<% else %>
+						<%= post.start_date %>
+					<% end %>
+				</td>
         <td>
           <% if can? :update, post %>
             <%= link_to "編輯", edit_post_path(post), :class => "btn btn-warning" %>

@@ -1,3 +1,7 @@
+$(function() {
+  $("#post_start_date").datepicker({dateFormat: 'yy-mm-dd'});
+});
+
 function new_comment()
 {
   var form = document.getElementById("new_comment");

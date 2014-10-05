@@ -84,9 +84,19 @@ class PostsController < ApplicationController
     end
   end
 
-  private
+  def calendar 
+    @posts = Post.where("posts.start_date IS NOT NULL")
+    #@posts = @paginate = Post.paginate(:page => params[:page], :per_page => 10).order('updated_at DESC')
+		@date = params[:month] ? Date.parse(params[:month]) : Date.today
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
+  end
+  
+	private
     def post_params
-      params.require(:post).permit(:title, :content, :pictures)
+      params.require(:post).permit(:title, :content, :pictures, :start_date)
     end
 
 end

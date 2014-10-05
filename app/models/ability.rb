@@ -55,5 +55,6 @@ class Ability
     def basic_read_only
       can :read, Post
       can :list, Post
+			can :calendar, Post
     end
 end
