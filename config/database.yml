@@ -21,8 +21,6 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: docker
-  password: docker
   host: <%= ENV.fetch('POSTGRES_PORT_5432_TCP_ADDR') %>
   port: <%= ENV.fetch('POSTGRES_PORT_5432_TCP_PORT') %>
 development:
@@ -87,4 +85,4 @@ production:
   database: railsguys_production
   username: docker 
   #password: <%= ENV['RAILSGUYS_DATABASE_PASSWORD'] %>
-  password: bemore454053
+  password: docker
